@@ -26,7 +26,7 @@ constvel_distance_mm = travel_distance_mm - accel_and_deccel_sum_distance_mm
 constvel_time_seconds = constvel_distance_mm/feedrate_mms
 
 #RUN COUNT CALCULATOR
-run_time_seconds = (constvel_time_seconds + accel_and_deccel_sum_time_seconds)
+run_time_seconds = (constvel_time_seconds + accel_and_deccel_sum_time_seconds)*2 #X2 FOR A THERE AND BACK RUN
 print(run_time_seconds)
 test_time_seconds = test_time_hours*60*60
 run_count = int(test_time_seconds // run_time_seconds)
