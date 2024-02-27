@@ -13,8 +13,6 @@ with open ('C:\\Users\\USER\\Documents\\Black-Wheel-Test\\Output\\Black wheel te
     f.write("G0\n")
     f.write("G91\n")
 
-    print(run_count)
-
     for i in range (0, (run_count)):
         f.write("Y1200 F6000\n")
         f.write("Y-1200 F6000\n")
