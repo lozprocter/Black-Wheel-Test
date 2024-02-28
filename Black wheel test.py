@@ -34,7 +34,7 @@ print(run_count)
 
 #WRITE GCODE FILE
 #CHANGE "USER"
-with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Black wheel test.gcode','w') as f:
+with open ('C:\\Users\\USER\\Documents\\Black-Wheel-Test\\Output\\Black wheel test.gcode','w') as f:
     f.write("G0\n")
     f.write("G91\n")
 
