@@ -25,17 +25,7 @@ def write_line_from_position(f, current_pos, xy_feedrate):
     z_coord = current_pos[2]
     f.write(f"G1 X{x_coord} Y{y_coord} F{xy_feedrate}\n")
 
-#WRITE GCODE FILE
-#CHANGE "USER"
-with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Spiral.gcode','w') as f:
-    #GCODE HEADER
-    f.write("G17\n")
-    f.write("G21\n")
-    f.write("G0\n")
-    f.write("G90\n") #ABSOLUTE POSITIONING
-    f.write("X0 Y0 Z50")
-    f.write(f"M3 S{spindle_speed}\n")
-    
+def offset_climb_toolpath():
     while passes_complete < passes:
         f.write(f"Z{z_clearance}\n")
         f.write(f"G0 X{max_line_length/2} Y{max_line_length/2}\n")
@@ -53,6 +43,27 @@ with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Spiral.gcode'
             current_pos = np.add(current_pos, [0, -i - step_over, 0])
             write_line_from_position(f, current_pos, xy_feedrate)
         passes_complete += 1
+
+def offset_climb_toolpath():
+
+def raster_toolpath():
+
+def climb_toolpath():
+
+def conventional_toolpath():
+
+#WRITE GCODE FILE
+#CHANGE "USER"
+with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Spiral.gcode','w') as f:
+    #GCODE HEADER
+    f.write("G17\n")
+    f.write("G21\n")
+    f.write("G0\n")
+    f.write("G90\n") #ABSOLUTE POSITIONING
+    f.write("X0 Y0 Z50")
+    f.write(f"M3 S{spindle_speed}\n")
+    
+    
 
     f.write("Z50 F750\n")
     f.write("M5\n")
