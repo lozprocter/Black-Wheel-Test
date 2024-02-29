@@ -1,8 +1,10 @@
-#PARAMETER INPUTS
+#USER INPUTS
 test_time_hours = 10
 axis = "Y"
 travel_distance_mm = 1200 #UNIT IS MM
 feedrate = 6000 #UNIT IS METRES/MIN - MAXIMUMS ARE X = 8000, Y = 6000, Z = 150
+
+#--------------------------------------------------------
 
 #CALCS
 acceleration = 0
@@ -34,12 +36,12 @@ print(run_count)
 
 #WRITE GCODE FILE
 #CHANGE "USER"
-with open ('C:\\Users\\USER\\Documents\\Black-Wheel-Test\\Output\\Black wheel test.gcode','w') as f:
+with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Black wheel test.gcode','w') as f:
     f.write("G0\n")
-    f.write("G91\n")
+    f.write("G90\n")
 
     for i in range (0, (run_count)):
         f.write(f"{axis}{travel_distance_mm} F{feedrate}\n")
-        f.write(f"{axis}-{travel_distance_mm} F{feedrate}\n")
+        f.write(f"{axis}0 F{feedrate}\n")
 
 f.close()
