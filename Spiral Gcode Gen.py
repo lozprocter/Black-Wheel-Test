@@ -44,13 +44,13 @@ def offset_climb_toolpath():
             write_line_from_position(f, current_pos, xy_feedrate)
         passes_complete += 1
 
-def offset_climb_toolpath():
+# def offset_climb_toolpath():
 
-def raster_toolpath():
+# def raster_toolpath():
 
-def climb_toolpath():
+# def climb_toolpath():
 
-def conventional_toolpath():
+# def conventional_toolpath():
 
 #WRITE GCODE FILE
 #CHANGE "USER"
@@ -63,7 +63,7 @@ with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Spiral.gcode'
     f.write("X0 Y0 Z50")
     f.write(f"M3 S{spindle_speed}\n")
     
-    
+    offset_climb_toolpath()
 
     f.write("Z50 F750\n")
     f.write("M5\n")
