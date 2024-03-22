@@ -3,9 +3,9 @@ import numpy as np
 
 #USER INPUTS
 toolpath_type = "offset"
-step_down = 6
+step_down = 5
 tool_dia = 6
-passes = 4
+passes = 3
 xy_feedrate = 4000
 z_feedrate = 150
 spindle_speed = 22500
@@ -33,7 +33,7 @@ with open ('C:\\Users\\ramiz\\Documents\\Black-Wheel-Test\\Output\\Spiral.gcode'
     f.write("G21\n")
     f.write("G0\n")
     f.write("G90\n") #ABSOLUTE POSITIONING
-    f.write("X0 Y0 Z50")
+    f.write("X0 Y0 Z50\n")
     f.write(f"M3 S{spindle_speed}\n")
     
     while passes_complete < passes:
